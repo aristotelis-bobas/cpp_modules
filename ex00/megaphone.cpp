@@ -6,10 +6,11 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/03 14:48:26 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/05 17:04:32 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/05 17:38:46 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cctype>
 #include <string>
 #include <iostream>
 
