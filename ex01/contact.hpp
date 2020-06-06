@@ -6,12 +6,12 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/05 18:07:12 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/06 18:18:23 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/06 21:57:39 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP_H
-# define CONTACT_HPP_H
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
 # include <string>
 
