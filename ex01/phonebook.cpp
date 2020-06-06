@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/05 17:45:32 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/06 19:21:58 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/06 19:27:05 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		main(void)
 		}
 		if (!command.compare("SEARCH"))
 		{
-			if (contacts >= 7)
+			if (contacts >= 8)
 				contacts = 8;
 			std::cout << "Searching contacts" << std::endl;
 			for(int j = 0; j < contacts; j++)
