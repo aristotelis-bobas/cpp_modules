@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/05 18:07:15 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/06 19:29:24 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/06 22:14:03 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 #include "contact.hpp"
 
-contact::contact()
+contact::contact(void)
 {
 	std::string		first_name;
 	std::string		last_name;
@@ -29,7 +29,7 @@ contact::contact()
 	std::string		darkest_secret;
 }
 
-void contact::add()
+void contact::add(void)
 {
 	std::cout << "Insert first name > ";
 	std::getline(std::cin, first_name);
