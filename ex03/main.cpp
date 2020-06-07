@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Zombie.hpp                                         :+:    :+:            */
+/*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/06 23:48:02 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/07 19:46:38 by abobas        ########   odam.nl         */
+/*   Created: 2020/06/07 19:00:33 by abobas        #+#    #+#                 */
+/*   Updated: 2020/06/07 19:43:56 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "Zombie.hpp"
+#include "ZombieHorde.hpp"
+#include <cstdlib>
+#include <ctime>
 
-#include <string>
-
-class Zombie
+int		main()
 {
-	private:
-
-	std::string		name;
-	std::string		type;
-	
-	public:
-
-	Zombie();
-	Zombie(std::string insert_name, std::string insert_type);
-	~Zombie();
-	void			announce();
-	void			announce(char const *insert_text);
-};
-
-#endif
+	srand(time(0));
+	ZombieHorde Horde("Putrid Piece of Shit", 10);
+	Horde.announce();
+	return (0);
+}

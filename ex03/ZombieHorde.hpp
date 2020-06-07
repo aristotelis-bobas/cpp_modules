@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Zombie.hpp                                         :+:    :+:            */
+/*   ZombieHorde.hpp                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/06 23:48:02 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/07 19:46:38 by abobas        ########   odam.nl         */
+/*   Created: 2020/06/07 19:00:57 by abobas        #+#    #+#                 */
+/*   Updated: 2020/06/07 19:42:21 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef ZOMBIEHORDE_HPP
+# define ZOMBIEHORDE_HPP
 
-#include <string>
+# include "Zombie.hpp"
 
-class Zombie
+class ZombieHorde
 {
 	private:
 
-	std::string		name;
-	std::string		type;
+	int			amount;
+	Zombie		*Horde;
 	
 	public:
 
-	Zombie();
-	Zombie(std::string insert_name, std::string insert_type);
-	~Zombie();
-	void			announce();
-	void			announce(char const *insert_text);
+	ZombieHorde(int N);
+	ZombieHorde(char const *insert_type, int N);
+	~ZombieHorde();
+	void announce();
 };
 
 #endif

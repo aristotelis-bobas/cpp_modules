@@ -6,13 +6,14 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/06 23:47:34 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/07 16:37:38 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/07 19:40:16 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 #include "ZombieEvent.hpp"
 #include <cstdlib>
+#include <ctime>
 #include <unistd.h>
 #include <iostream>
 
