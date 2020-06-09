@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/07 00:07:10 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/07 16:36:17 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/09 16:37:58 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,11 @@ void			ZombieEvent::setRandomName()
 		name = std::string ("Smoker");
 }
 
-class Zombie	*ZombieEvent::RandomChump(char const *insert_type)
+class Zombie	*ZombieEvent::RandomChump()
 {
 	Zombie		*NewZombie;
 	
 	setRandomName();
-	setZombieType(insert_type);
 	NewZombie = new class Zombie(type, name);
 	NewZombie->announce();
 	return (NewZombie);
