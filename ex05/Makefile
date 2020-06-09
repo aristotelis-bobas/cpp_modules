@@ -6,23 +6,26 @@
 #    By: abobas <abobas@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/06/07 20:24:23 by abobas        #+#    #+#                  #
-#    Updated: 2020/06/07 21:07:25 by abobas        ########   odam.nl          #
+#    Updated: 2020/06/09 17:20:37 by abobas        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 SRC = 		main.cpp \
 			Brain.cpp \
 			Human.cpp
+
+INCLUDE = 	Brain.hpp \
+			Human.hpp
 			
 NAME = 		brain
 
-FLAGS =		-Wall -Werror -Wextra
+FLAGS =		-Wall -Werror -Wextra -std=c++98 -pedantic
 
 CC =		clang++
 
 all: 		$(NAME)
 
-$(NAME): $(SRC)
+$(NAME): $(SRC) $(INCLUDE)
 	$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
 clean:

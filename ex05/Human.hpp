@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/07 20:27:21 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/07 21:59:25 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/09 17:18:19 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Human
 {
 	private:
 	
-	const Brain			brain;
+	const Brain			brain_;
 
 	public:
 

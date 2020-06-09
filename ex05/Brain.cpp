@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/07 20:25:50 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/07 21:25:21 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/09 17:17:33 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ Brain::Brain()
 
 std::string		Brain::identify() const
 {
-	std::stringstream	String;
-	long Address = (long)this;
-	String << "0x" << std::uppercase << std::hex << Address;
-	return (String.str());
+	std::stringstream	string;
+	long address = (long)this;
+	string << "0x" << std::uppercase << std::hex << address;
+	return (string.str());
 }

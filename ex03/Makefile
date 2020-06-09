@@ -6,7 +6,7 @@
 #    By: abobas <abobas@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/06/07 18:59:26 by abobas        #+#    #+#                  #
-#    Updated: 2020/06/09 17:09:11 by abobas        ########   odam.nl          #
+#    Updated: 2020/06/09 17:20:21 by abobas        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ CC =		clang++
 
 all: 		$(NAME)
 
-$(NAME): $(SRC)
+$(NAME): $(SRC) $(INCLUDE)
 	$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
 clean:

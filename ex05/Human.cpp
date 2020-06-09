@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/07 21:03:51 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/07 21:59:48 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/09 17:19:39 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ Human::Human()
 
 const Brain&		Human::getBrain()
 {
-	return(brain);
+	return(brain_);
 }
 
 std::string			Human::identify()
 {
-	return (brain.identify());
+	return (brain_.identify());
 }
