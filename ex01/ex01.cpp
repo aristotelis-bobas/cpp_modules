@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/06 23:26:38 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/07 10:57:03 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/09 16:27:22 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 
 void	MemoryLeak()
 {
-	std::string			*panther;
+	std::string			*panther = new std::string("String panther");
 	
-	panther = new std::string("String panther");
 	std::cout << *panther << std::endl;
 	delete panther;
 }

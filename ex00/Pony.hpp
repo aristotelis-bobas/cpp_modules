@@ -6,12 +6,12 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/06 21:56:24 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/06 23:24:43 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/09 16:25:28 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PONY_HPP
-# define PONY_HPP
+#define PONY_HPP
 
 #include <string>
 
