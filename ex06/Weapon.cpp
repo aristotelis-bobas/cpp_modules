@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/07 23:17:01 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/07 23:56:16 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/09 17:22:49 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,4 @@ const std::string&		Weapon::getType() const
 {
 	const std::string& reference = type;
 	return (reference);
-}	
+}
