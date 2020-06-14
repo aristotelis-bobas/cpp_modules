@@ -6,9 +6,12 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/14 15:38:41 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/14 17:14:51 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/14 18:02:41 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef FIXED_H
+#define FIXED_H
 
 class Fixed
 {
@@ -23,3 +26,5 @@ public:
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
 };
+
+#endif
