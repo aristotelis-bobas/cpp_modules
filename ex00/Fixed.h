@@ -6,14 +6,14 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/14 15:38:41 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/14 16:59:54 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/14 17:14:51 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 class Fixed
 {
 private:
-	int	fixed_point_value_;
+	int	value;
 	static const int bits = 8;
 public:
 	Fixed();
