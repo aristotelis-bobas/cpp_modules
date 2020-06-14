@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/14 15:38:41 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/14 15:59:53 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/14 16:59:54 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,3 @@ public:
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
 };
-
