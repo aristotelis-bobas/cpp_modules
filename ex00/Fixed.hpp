@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cc                                            :+:    :+:            */
+/*   Fixed.hpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/14 15:50:57 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/14 15:54:58 by abobas        ########   odam.nl         */
+/*   Created: 2020/06/14 15:38:41 by abobas        #+#    #+#                 */
+/*   Updated: 2020/06/16 13:52:37 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Fixed.h"
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
-int		main()
+class Fixed
 {
-	Fixed	a;
-	Fixed	b(a);
-	Fixed	c;
-	
-	c = b;
+private:
+	int	value;
+	static const int bits = 8;
+public:
+	Fixed();
+	Fixed(Fixed &src);
+	~Fixed();
+	void operator=(Fixed &src);
+	int getRawBits(void) const;
+	void setRawBits(int const raw);
+};
 
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-}
+#endif
