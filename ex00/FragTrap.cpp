@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/16 22:50:38 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/17 21:29:12 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/17 21:49:58 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ FragTrap::FragTrap(std::string const name)
 	this->melee_damage = 30;
 	this->ranged_damage = 20;
 	this->fire_damage = 25;
-	this->cryo_damage = 28;
+	this->cryo_damage = 20;
 	this->explosive_damage = 35;
 	this->armor_reduction = 5;
 	this->alive = true;
@@ -61,7 +61,7 @@ std::string FragTrap::getTypeName()
 
 void FragTrap::vaulthunter_dot_exe(std::string const &target)
 {
-	int		number = rand() % 5;
+	int number = rand() % 5;
 	
 	if (this->energy_points >= 25)
 	{
@@ -89,7 +89,7 @@ void FragTrap::rangedAttack(std::string const &target)
 	if (this->alive == true)
 	{
 		std::cout << this->getTypeName() << ": 'Ratattattattatta! Powpowpowpow! Powpowpowpow! Pew-pew, pew-pew-pewpew!'" << std::endl;
-		std::cout << "<" << this->getTypeName() << " attacks " << target << " at range, causing ";
+		std::cout << "<" << this->getTypeName() << " shoots his minigun at " << target << ", causing ";
 		std::cout << this->ranged_damage << " points of damage>" << std::endl;
 	}
 	else
@@ -145,7 +145,7 @@ void FragTrap::meleeAttack(std::string const &target)
 	if (this->alive == true)
 	{
 		std::cout << this->getTypeName() << ": 'F to the R to the 4 to the G to the WHAAT!'" << std::endl;
-		std::cout << "<" << this->getTypeName() << " attacks " << target << " from up close, causing ";
+		std::cout << "<" << this->getTypeName() << " hits " << target << " from up close, causing ";
 		std::cout << this->melee_damage << " points of damage>" << std::endl;
 	}
 	else
@@ -163,9 +163,10 @@ void FragTrap::takeDamage(unsigned int amount)
 		std::cout << this->getTypeName() << ": 'Ow hohoho, that hurts! Yipes!'" << std::endl;
 		std::cout << "<" << this->getTypeName() << " is dealt " << damage_dealt << " points of damage>" << std::endl;
 		this->hit_points -= damage_dealt;
-		if (this->hit_points < 0)
+		if (this->hit_points <= 0)
 		{
 			std::cout << this->getTypeName() << ": 'Argh arghargh death gurgle gurglegurgle urgh... death.'" << std::endl;
+			std::cout << "<" << this->getTypeName() << " has been destroyed in combat>" << std::endl;
 			this->alive = false;
 			this->hit_points = 0;
 		}
