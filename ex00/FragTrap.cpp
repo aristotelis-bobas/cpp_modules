@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/16 22:50:38 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/17 19:57:10 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/17 21:29:12 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ FragTrap::FragTrap(std::string const name)
 	this->armor_reduction = 5;
 	this->alive = true;
 	this->type = std::string("FR4G-TP");
-	std::cout << FragTrap::getTypeName() << ": 'Recompiling my combat code!'" << std::endl;
+	std::cout << this->getTypeName() << ": 'Recompiling my combat code!'" << std::endl;
 }
 
 FragTrap::FragTrap(FragTrap const &other)
@@ -51,7 +51,7 @@ void FragTrap::operator = (FragTrap const &other)
 	this->armor_reduction = other.armor_reduction;
 	this->alive = other.alive;
 	if (this->alive == true)
-		std::cout << FragTrap::getTypeName() << ": 'Recompiling my combat code!'" << std::endl;
+		std::cout << this->getTypeName() << ": 'Recompiling my combat code!'" << std::endl;
 }
 
 std::string FragTrap::getTypeName()
@@ -67,20 +67,20 @@ void FragTrap::vaulthunter_dot_exe(std::string const &target)
 	{
 		this->energy_points -= 25;
 		if (number == 0)
-			FragTrap::rangedAttack(target);
+			this->rangedAttack(target);
 		else if (number == 1)
-			FragTrap::meleeAttack(target);
+			this->meleeAttack(target);
 		else if (number == 2)
-			FragTrap::fireAttack(target);
+			this->fireAttack(target);
 		else if (number == 3)
-			FragTrap::cryoAttack(target);
+			this->cryoAttack(target);
 		else if (number == 4)
-			FragTrap::explosiveAttack(target);
-		std::cout << "<" << FragTrap::getTypeName() << " energy points are now " << this->energy_points << ">" << std::endl;
+			this->explosiveAttack(target);
+		std::cout << "<" << this->getTypeName() << " energy points are now " << this->energy_points << ">" << std::endl;
 	}
 	else
 	{
-		std::cout << "<" << FragTrap::getTypeName() << " is out of energy points>" << std::endl;	
+		std::cout << "<" << this->getTypeName() << " is out of energy points>" << std::endl;	
 	}
 }
 
@@ -88,13 +88,13 @@ void FragTrap::rangedAttack(std::string const &target)
 {
 	if (this->alive == true)
 	{
-		std::cout << FragTrap::getTypeName() << ": 'Ratattattattatta! Powpowpowpow! Powpowpowpow! Pew-pew, pew-pew-pewpew!'" << std::endl;
-		std::cout << "<" << FragTrap::getTypeName() << " attacks " << target << " at range, causing ";
+		std::cout << this->getTypeName() << ": 'Ratattattattatta! Powpowpowpow! Powpowpowpow! Pew-pew, pew-pew-pewpew!'" << std::endl;
+		std::cout << "<" << this->getTypeName() << " attacks " << target << " at range, causing ";
 		std::cout << this->ranged_damage << " points of damage>" << std::endl;
 	}
 	else
 	{
-		std::cout << "<" << FragTrap::getTypeName() << " has stopped functioning>" << std::endl;
+		std::cout << "<" << this->getTypeName() << " has stopped functioning>" << std::endl;
 	}
 }
 
@@ -102,13 +102,13 @@ void FragTrap::fireAttack(std::string const &target)
 {
 	if (this->alive == true)
 	{
-		std::cout << FragTrap::getTypeName() << ": 'Burn, baby, burn!'" << std::endl;
-		std::cout << "<" << FragTrap::getTypeName() << " uses its flamethrower on " << target << ", causing ";
+		std::cout << this->getTypeName() << ": 'Burn, baby, burn!'" << std::endl;
+		std::cout << "<" << this->getTypeName() << " uses its flamethrower on " << target << ", causing ";
 		std::cout << this->fire_damage << " points of damage>" << std::endl;
 	}
 	else
 	{
-		std::cout << "<" << FragTrap::getTypeName() << " has stopped functioning>" << std::endl;
+		std::cout << "<" << this->getTypeName() << " has stopped functioning>" << std::endl;
 	}
 }
 
@@ -116,13 +116,13 @@ void FragTrap::explosiveAttack(std::string const &target)
 {
 	if (this->alive == true)
 	{
-		std::cout << FragTrap::getTypeName() << ": 'Bad guy go boom!'" << std::endl;
-		std::cout << "<" << FragTrap::getTypeName() << " throws a grenade at " << target << ", causing ";
+		std::cout << this->getTypeName() << ": 'Bad guy go boom!'" << std::endl;
+		std::cout << "<" << this->getTypeName() << " throws a grenade at " << target << ", causing ";
 		std::cout << this->explosive_damage << " points of damage>" << std::endl;
 	}
 	else
 	{
-		std::cout << "<" << FragTrap::getTypeName() << " has stopped functioning>" << std::endl;
+		std::cout << "<" << this->getTypeName() << " has stopped functioning>" << std::endl;
 	}
 }
 
@@ -130,13 +130,13 @@ void FragTrap::cryoAttack(std::string const &target)
 {
 	if (this->alive == true)
 	{
-		std::cout << FragTrap::getTypeName() << ": 'Freezy peezy!'" << std::endl;
-		std::cout << "<" << FragTrap::getTypeName() << " freezes " << target << ", causing ";
+		std::cout << this->getTypeName() << ": 'Freezy peezy!'" << std::endl;
+		std::cout << "<" << this->getTypeName() << " freezes " << target << ", causing ";
 		std::cout << this->cryo_damage << " points of damage>" << std::endl;
 	}
 	else
 	{
-		std::cout << "<" << FragTrap::getTypeName() << " has stopped functioning>" << std::endl;
+		std::cout << "<" << this->getTypeName() << " has stopped functioning>" << std::endl;
 	}
 }
 
@@ -144,13 +144,13 @@ void FragTrap::meleeAttack(std::string const &target)
 {
 	if (this->alive == true)
 	{
-		std::cout << FragTrap::getTypeName() << ": 'F to the R to the 4 to the G to the WHAAT!'" << std::endl;
-		std::cout << "<" << FragTrap::getTypeName() << " attacks " << target << " from up close, causing ";
+		std::cout << this->getTypeName() << ": 'F to the R to the 4 to the G to the WHAAT!'" << std::endl;
+		std::cout << "<" << this->getTypeName() << " attacks " << target << " from up close, causing ";
 		std::cout << this->melee_damage << " points of damage>" << std::endl;
 	}
 	else
 	{
-		std::cout << "<" << FragTrap::getTypeName() << " has stopped functioning>" << std::endl;
+		std::cout << "<" << this->getTypeName() << " has stopped functioning>" << std::endl;
 	}
 }
 
@@ -160,21 +160,21 @@ void FragTrap::takeDamage(unsigned int amount)
 
 	if (this->alive == true)
 	{
-		std::cout << FragTrap::getTypeName() << ": 'Ow hohoho, that hurts! Yipes!'" << std::endl;
-		std::cout << "<" << FragTrap::getTypeName() << " is dealt " << damage_dealt << " points of damage>" << std::endl;
+		std::cout << this->getTypeName() << ": 'Ow hohoho, that hurts! Yipes!'" << std::endl;
+		std::cout << "<" << this->getTypeName() << " is dealt " << damage_dealt << " points of damage>" << std::endl;
 		this->hit_points -= damage_dealt;
 		if (this->hit_points < 0)
 		{
-			std::cout << FragTrap::getTypeName() << ": 'Argh arghargh death gurgle gurglegurgle urgh... death.'" << std::endl;
+			std::cout << this->getTypeName() << ": 'Argh arghargh death gurgle gurglegurgle urgh... death.'" << std::endl;
 			this->alive = false;
 			this->hit_points = 0;
 		}
 		else
-			std::cout << "<" << FragTrap::getTypeName() << " hit points are now " << this->hit_points << ">" << std::endl;
+			std::cout << "<" << this->getTypeName() << " hit points are now " << this->hit_points << ">" << std::endl;
 	}
 	else
 	{
-		std::cout << "<" << FragTrap::getTypeName() << " already is a pile of junk>" << std::endl;
+		std::cout << "<" << this->getTypeName() << " already is a pile of junk>" << std::endl;
 	}		
 }
 
@@ -182,21 +182,20 @@ void FragTrap::beRepaired(unsigned int amount)
 {
 	if (this->alive == true)
 	{
-		std::cout << FragTrap::getTypeName() << ": 'Sweet life juice!'" << std::endl;
-		std::cout << "<" << FragTrap::getTypeName() << " gets repaired for " << amount << " hit points>" << std::endl;
+		std::cout << this->getTypeName() << ": 'Sweet life juice!'" << std::endl;
+		std::cout << "<" << this->getTypeName() << " gets repaired for " << amount << " hit points>" << std::endl;
 		this->hit_points += amount;
 		if (this->hit_points > this->max_hit_points)
 			this->hit_points = this->max_hit_points;
-		std::cout << "<" << FragTrap::getTypeName() << " hit points are now " << this->hit_points << ">" << std::endl;
+		std::cout << "<" << this->getTypeName() << " hit points are now " << this->hit_points << ">" << std::endl;
 	}
 	else
 	{
-		std::cout << "<" << FragTrap::getTypeName() << " is beyond repairable>" << std::endl;
+		std::cout << "<" << this->getTypeName() << " is beyond repairable>" << std::endl;
 	}
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "<" << FragTrap::getTypeName() << " gets recycled>" << std::endl;
+	std::cout << "<" << this->getTypeName() << " gets recycled>" << std::endl;
 }
-
