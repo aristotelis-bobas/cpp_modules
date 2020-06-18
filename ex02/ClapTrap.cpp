@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 16:15:10 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/18 18:06:34 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/18 18:53:46 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,5 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap::~ClapTrap()
 {
-    this->type = std::string("CL4P-TP");
 	std::cout << "<" << this->getTypeName() << " has seen the end of its lifecycle>" << std::endl;
 }

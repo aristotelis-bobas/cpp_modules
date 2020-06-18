@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   NinjaTrap.hpp                                      :+:    :+:            */
+/*   FragTrap.hpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/18 17:36:51 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/18 18:49:47 by abobas        ########   odam.nl         */
+/*   Created: 2020/06/16 22:45:57 by abobas        #+#    #+#                 */
+/*   Updated: 2020/06/18 18:30:25 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NINJATRAP_HPP
-#define NINJATRAP_HPP
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
 #include "ClapTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
 #include <string>
 
-class NinjaTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
-    public:
-        NinjaTrap(std::string const name);
-		NinjaTrap(NinjaTrap const &other);
-		void operator = (NinjaTrap const &other);
-        void ninjaShoebox(ClapTrap const &other);
-        void ninjaShoebox(FragTrap const &other);
-        void ninjaShoebox(ScavTrap const &other);
-        void ninjaShoebox(NinjaTrap const &other);
+	protected:
+		int fire_damage;
+		int	cryo_damage;
+		int	explosive_damage;
+		void fireAttack(std::string const &target);
+		void cryoAttack(std::string const &target);
+		void explosiveAttack(std::string const &target);
+	public:
+		FragTrap(std::string const name);
+		FragTrap(FragTrap const &other);
+		void operator = (FragTrap const &other);
+		void vaulthunter_dot_exe(std::string const &target);
 		void rangedAttack(std::string const &target);
 		void meleeAttack(std::string const &target);
-		~NinjaTrap();
+		~FragTrap();
 };
 
 #endif

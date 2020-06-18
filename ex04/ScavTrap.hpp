@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   NinjaTrap.hpp                                      :+:    :+:            */
+/*   ScavTrap.hpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/18 17:36:51 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/18 18:49:47 by abobas        ########   odam.nl         */
+/*   Created: 2020/06/17 19:01:30 by abobas        #+#    #+#                 */
+/*   Updated: 2020/06/18 16:46:17 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NINJATRAP_HPP
-#define NINJATRAP_HPP
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
 #include <string>
 
-class NinjaTrap : public ClapTrap
+class ScavTrap : public ClapTrap
 {
-    public:
-        NinjaTrap(std::string const name);
-		NinjaTrap(NinjaTrap const &other);
-		void operator = (NinjaTrap const &other);
-        void ninjaShoebox(ClapTrap const &other);
-        void ninjaShoebox(FragTrap const &other);
-        void ninjaShoebox(ScavTrap const &other);
-        void ninjaShoebox(NinjaTrap const &other);
+	private:
+		void challengeOne();
+		void challengeTwo();
+		void challengeThree();
+		void challengeFour();
+		void challengeFive();
+	public:
+		ScavTrap(std::string const name);
+		ScavTrap(ScavTrap const &other);
+		void operator = (ScavTrap const &other);
+		void challengeNewcomer();
 		void rangedAttack(std::string const &target);
 		void meleeAttack(std::string const &target);
-		~NinjaTrap();
+		~ScavTrap();
 };
 
 #endif

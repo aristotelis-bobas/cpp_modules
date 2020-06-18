@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 17:36:51 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/18 18:49:47 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/18 18:50:40 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include "ScavTrap.hpp"
 #include <string>
 
-class NinjaTrap : public ClapTrap
+class NinjaTrap : virtual public ClapTrap
 {
     public:
         NinjaTrap(std::string const name);

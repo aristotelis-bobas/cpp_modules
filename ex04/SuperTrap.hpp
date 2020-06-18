@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   NinjaTrap.hpp                                      :+:    :+:            */
+/*   SuperTrap.hpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/18 17:36:51 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/18 18:49:47 by abobas        ########   odam.nl         */
+/*   Created: 2020/06/18 18:29:13 by abobas        #+#    #+#                 */
+/*   Updated: 2020/06/18 18:37:37 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NINJATRAP_HPP
-#define NINJATRAP_HPP
+#ifndef SUPERTRAP_HPP
+#define SUPERTRAP_HPP
 
-#include "ClapTrap.hpp"
 #include "FragTrap.hpp"
-#include "ScavTrap.hpp"
-#include <string>
+#include "NinjaTrap.hpp"
 
-class NinjaTrap : public ClapTrap
+class SuperTrap: public FragTrap, public NinjaTrap
 {
     public:
-        NinjaTrap(std::string const name);
-		NinjaTrap(NinjaTrap const &other);
-		void operator = (NinjaTrap const &other);
-        void ninjaShoebox(ClapTrap const &other);
-        void ninjaShoebox(FragTrap const &other);
-        void ninjaShoebox(ScavTrap const &other);
-        void ninjaShoebox(NinjaTrap const &other);
+        SuperTrap(std::string const name);
+		SuperTrap(SuperTrap const &other);
+		void operator = (SuperTrap const &other);
 		void rangedAttack(std::string const &target);
 		void meleeAttack(std::string const &target);
-		~NinjaTrap();
+		~SuperTrap();
 };
 
 #endif
