@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 16:06:26 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/18 17:56:22 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/18 18:12:23 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ class ClapTrap
 		bool alive;
         std::string name;
 		std::string type;
-		std::string getTypeName();
     public:
         ClapTrap(std::string const name);
 		ClapTrap(ClapTrap const &other);
@@ -38,6 +37,7 @@ class ClapTrap
 		void meleeAttack(std::string const &target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+		std::string getTypeName() const;
         ~ClapTrap();
 };
 

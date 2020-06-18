@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 16:15:10 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/18 18:06:34 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/18 18:10:15 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void ClapTrap::operator = (ClapTrap const &other)
 		std::cout << this->getTypeName() << ": 'CL4P-TP booted!'" << std::endl;
 }
 
-std::string ClapTrap::getTypeName()
+std::string ClapTrap::getTypeName() const
 {
 	return (this->type.substr().append(" ").append(this->name));
 }
