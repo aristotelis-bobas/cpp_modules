@@ -6,15 +6,17 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/16 22:50:38 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/18 16:21:16 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/18 17:11:45 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 #include <iostream>
+#include <string>
 #include <stdlib.h>
 
-FragTrap::FragTrap(std::string const name)
+FragTrap::FragTrap(std::string const name): ClapTrap(name)
 {
 	this->name = name;
 	this->hit_points = 100;
@@ -33,7 +35,7 @@ FragTrap::FragTrap(std::string const name)
 	std::cout << this->getTypeName() << ": 'Recompiling my combat code!'" << std::endl;
 }
 
-FragTrap::FragTrap(FragTrap const &other)
+FragTrap::FragTrap(FragTrap const &other): ClapTrap(other.name)
 {
 	*this = other;
 }
@@ -55,11 +57,6 @@ void FragTrap::operator = (FragTrap const &other)
 	this->alive = other.alive;
 	if (this->alive == true)
 		std::cout << this->getTypeName() << ": 'Recompiling my combat code!'" << std::endl;
-}
-
-std::string FragTrap::getTypeName()
-{
-	return (this->type.substr().append(" ").append(this->name));
 }
 
 void FragTrap::vaulthunter_dot_exe(std::string const &target)
@@ -154,50 +151,6 @@ void FragTrap::meleeAttack(std::string const &target)
 	else
 	{
 		std::cout << "<" << this->getTypeName() << " has stopped functioning>" << std::endl;
-	}
-}
-
-void FragTrap::takeDamage(unsigned int amount)
-{
-	int damage_dealt = (int)amount - this->armor_reduction;
-
-	if (damage_dealt < 0)
-		damage_dealt = 0;
-	if (this->alive == true)
-	{
-		std::cout << this->getTypeName() << ": 'Ow hohoho, that hurts! Yipes!'" << std::endl;
-		std::cout << "<" << this->getTypeName() << " is dealt " << damage_dealt << " points of damage>" << std::endl;
-		this->hit_points -= damage_dealt;
-		if (this->hit_points <= 0)
-		{
-			std::cout << this->getTypeName() << ": 'Argh arghargh death gurgle gurglegurgle urgh... death.'" << std::endl;
-			std::cout << "<" << this->getTypeName() << " has been destroyed in combat>" << std::endl;
-			this->alive = false;
-			this->hit_points = 0;
-		}
-		else
-			std::cout << "<" << this->getTypeName() << " hit points are now " << this->hit_points << ">" << std::endl;
-	}
-	else
-	{
-		std::cout << "<" << this->getTypeName() << " already is a pile of junk>" << std::endl;
-	}		
-}
-
-void FragTrap::beRepaired(unsigned int amount)
-{
-	if (this->alive == true)
-	{
-		std::cout << this->getTypeName() << ": 'Sweet life juice!'" << std::endl;
-		std::cout << "<" << this->getTypeName() << " gets repaired for " << amount << " hit points>" << std::endl;
-		this->hit_points += amount;
-		if (this->hit_points > this->max_hit_points)
-			this->hit_points = this->max_hit_points;
-		std::cout << "<" << this->getTypeName() << " hit points are now " << this->hit_points << ">" << std::endl;
-	}
-	else
-	{
-		std::cout << "<" << this->getTypeName() << " is beyond repairable>" << std::endl;
 	}
 }
 

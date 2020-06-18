@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/16 22:50:38 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/17 22:08:06 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/18 16:21:07 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,9 @@ void FragTrap::operator = (FragTrap const &other)
 	this->level = other.level;
 	this->melee_damage = other.melee_damage;
 	this->ranged_damage = other.ranged_damage;
+	this->fire_damage = other.fire_damage;
+	this->cryo_damage = other.cryo_damage;
+	this->explosive_damage = other.explosive_damage;
 	this->armor_reduction = other.armor_reduction;
 	this->alive = other.alive;
 	if (this->alive == true)
