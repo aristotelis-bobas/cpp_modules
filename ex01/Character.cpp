@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 22:18:00 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/18 22:54:28 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/18 22:56:27 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void Character::attack(Enemy *enemy)
         {
             std::cout << this->name << " attacks " << enemy->getType() << " with a " << this->weapon->getName() << std::endl;
             this->weapon->attack();
+            this->AP -= weapon->getAPCost();
             enemy->takeDamage(this->weapon->getDamage());
             if (enemy->getHP() <= 0)
                 delete enemy;
