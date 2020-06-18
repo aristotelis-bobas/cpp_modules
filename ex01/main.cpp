@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/16 22:45:43 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/17 22:09:58 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/18 14:42:49 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ int	main()
 	test1.takeDamage(30);
 	test1.takeDamage(30);
 	
+	test2.challengeNewcomer();
+	test2.challengeNewcomer();
+	test2.challengeNewcomer();
 	test2.meleeAttack("enemy");
 	test2.rangedAttack("enemy");
 	test2.beRepaired(20);

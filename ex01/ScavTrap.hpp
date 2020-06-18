@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/17 19:01:30 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/17 21:52:31 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/18 14:24:23 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,16 @@ class ScavTrap
 		std::string name;
 		std::string type;
 		std::string getTypeName();
+		void challengeOne();
+		void challengeTwo();
+		void challengeThree();
+		void challengeFour();
+		void challengeFive();
 	public:
 		ScavTrap(std::string const name);
 		ScavTrap(ScavTrap const &other);
 		void operator = (ScavTrap const &other);
+		void challengeNewcomer();
 		void rangedAttack(std::string const &target);
 		void meleeAttack(std::string const &target);
 		void takeDamage(unsigned int amount);
