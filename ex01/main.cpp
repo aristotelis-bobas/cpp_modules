@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 21:21:33 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/18 22:52:46 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/19 16:02:47 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,28 @@ int main()
     me->attack(b);
     std::cout << *me;
     me->attack(b);
+    std::cout << *me;
+
+	std::cout << "\n\n" << std::endl;
+
+	Enemy *c = new SuperMutant();
+
+	me->equip(pf);
+	std::cout << *me;
+	std::cout << "Mutant HP = " << c->getHP() << std::endl;
+	me->attack(c);
+    std::cout << *me;
+	std::cout << "Mutant HP = " << c->getHP() << std::endl;
+	me->attack(c);
+    std::cout << *me;
+	std::cout << "Mutant HP = " << c->getHP() << std::endl;
+	me->recoverAP();
+	std::cout << *me;
+	me->recoverAP();
+	std::cout << *me;
+	me->attack(c);
+    std::cout << *me;
+	std::cout << "Mutant HP = " << c->getHP() << std::endl;
+	me->attack(c);
     std::cout << *me;
 }
