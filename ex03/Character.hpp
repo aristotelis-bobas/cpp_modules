@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/19 23:05:42 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/19 23:33:26 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/20 00:33:36 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Character: public ICharacter
 {
 	private:
 		AMateria* inventory[4];
+		bool equipped[4];
 		std::string name;
-		int count;
 	public:
 		Character(std::string const &name);
 		Character(Character const &other);

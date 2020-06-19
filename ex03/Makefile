@@ -6,7 +6,7 @@
 #    By: abobas <abobas@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/06/18 20:49:13 by abobas        #+#    #+#                  #
-#    Updated: 2020/06/19 23:24:42 by abobas        ########   odam.nl          #
+#    Updated: 2020/06/20 00:02:36 by abobas        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,17 @@ SRC = 		main.cpp \
 			AMateria.cpp \
 			Ice.cpp \
 			Cure.cpp \
-			Character.cpp
+			Character.cpp \
+			MateriaSource.cpp
 
 
 INCLUDE =	AMateria.hpp \
 			Ice.hpp \
 			Cure.hpp \
 			ICharacter.hpp \
-			Character.hpp
+			Character.hpp \
+			IMateriaSource.hpp \
+			MateriaSource.hpp
 			
 NAME = 		bocal
 

@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/19 16:34:21 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/19 22:41:31 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/20 01:05:46 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ class AMateria
 		unsigned int _xp;
 	public:
 		AMateria(std::string const &type);
-		AMateria(AMateria const &other);
-		AMateria& operator = (AMateria const &other);
 		std::string const& getType() const;
 		unsigned int getXP() const;
 		virtual AMateria* clone() const = 0;
