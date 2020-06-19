@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 21:23:58 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/18 22:43:36 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/19 21:18:15 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Enemy
     public:
         Enemy(int hp, std::string const &type);
         Enemy(Enemy const &other);
-        void operator = (Enemy const &other);
+        Enemy& operator = (Enemy const &other);
         std::string getType() const;
         int getHP() const;
         void setType(std::string type);

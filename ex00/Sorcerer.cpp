@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 20:03:04 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/18 20:36:00 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/19 21:14:25 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,12 @@ Sorcerer::Sorcerer(Sorcerer const &other)
     *this = other;
 }
 
-void Sorcerer::operator = (Sorcerer const &other)
+Sorcerer& Sorcerer::operator = (Sorcerer const &other)
 {
     this->name = other.name;
     this->title = other.title;
     std::cout << name << ", " << title << " is born!" << std::endl;
+	return (*this);
 }
 
 std::string Sorcerer::getName() const

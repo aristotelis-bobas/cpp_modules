@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 21:24:00 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/18 21:52:45 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/19 21:17:54 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ Enemy::Enemy(Enemy const &other)
     *this = other;
 }
 
-void Enemy::operator = (Enemy const &other)
+Enemy& Enemy::operator = (Enemy const &other)
 {
     this->hp = other.hp;
     this->type = other.type;
+	return (*this);
 }
 
 std::string Enemy::getType() const

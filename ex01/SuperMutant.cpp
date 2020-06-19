@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 21:33:51 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/19 10:59:02 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/19 21:20:19 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ SuperMutant::SuperMutant(SuperMutant const &other):
     std::cout << "Gaaah. Me want smash heads!" << std::endl;
 }
 
-void SuperMutant::operator = (SuperMutant const &other)
+SuperMutant& SuperMutant::operator = (SuperMutant const &other)
 {
     this->setHP(other.getHP());
     this->setType(other.getType());
+	return (*this);
 }
 
 void SuperMutant::takeDamage(int damage)

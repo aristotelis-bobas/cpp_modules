@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 20:12:58 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/18 20:35:31 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/19 21:13:08 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,11 @@ Victim::Victim(Victim const &other)
     *this = other;
 }
 
-void Victim::operator = (Victim const &other)
+Victim& Victim::operator = (Victim const &other)
 {
     this->name = other.name;
     std::cout << "Some random victim called " << this->name << " just appeared!" << std::endl;
+	return (*this);
 }
 
 std::string Victim::getName() const

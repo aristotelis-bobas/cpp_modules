@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 20:51:37 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/18 22:43:51 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/19 21:16:19 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class AWeapon
     public:
         AWeapon(std::string const &name, int apcost, int damage);
         AWeapon(AWeapon const &other);
-        void operator = (AWeapon const &other);
+        AWeapon& operator = (AWeapon const &other);
         std::string getName() const;
         int getAPCost() const;
         int getDamage() const;

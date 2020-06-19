@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 20:55:20 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/18 22:42:42 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/19 21:16:55 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,12 @@ AWeapon::AWeapon(AWeapon const &other)
     *this = other;
 }
 
-void AWeapon::operator = (AWeapon const &other)
+AWeapon& AWeapon::operator = (AWeapon const &other)
 {
     this->name = other.name;
     this->apcost = other.apcost;
     this->damage = other.damage;
+	return (*this);
 }
 
 std::string AWeapon::getName() const

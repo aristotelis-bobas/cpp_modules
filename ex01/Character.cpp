@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 22:18:00 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/19 16:02:22 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/19 21:22:00 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,12 @@ Character::Character(Character const &other)
     *this = other;
 }
 
-void Character::operator = (Character const &other)
+Character& Character::operator = (Character const &other)
 {
     this->name = other.name;
     this->AP = other.AP;
     this->weapon = other.weapon;
+	return (*this);
 }
 
 void Character::recoverAP()
@@ -86,6 +87,7 @@ int Character::getAP() const
 
 Character::~Character()
 {
+	std::cout << this->getName() << " died." << std::endl;
 }
 
 std::ostream& operator << (std::ostream &out, Character const &src)

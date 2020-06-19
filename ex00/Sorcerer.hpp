@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 19:58:21 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/18 20:42:58 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/19 21:13:20 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Sorcerer
     public:
         Sorcerer(std::string name, std::string title);
         Sorcerer(Sorcerer const &other);
-		void operator = (Sorcerer const &other);
+		Sorcerer& operator = (Sorcerer const &other);
         std::string getName() const;
         std::string getTitle() const;
         void polymorph(Victim const &target);

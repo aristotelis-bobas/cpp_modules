@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/19 12:08:17 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/19 15:19:23 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/19 21:25:29 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Squad: public ISquad
 	public:
 		Squad();
 		Squad(Squad const &other);
-		void operator = (Squad const &other);
+		Squad& operator = (Squad const &other);
 		int getCount() const;
 		ISpaceMarine* getUnit(int index) const;
 		int push(ISpaceMarine *marine);

@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/19 14:18:01 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/19 14:20:35 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/19 21:26:24 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class TacticalMarine: public ISpaceMarine
 	public:
 		TacticalMarine();
 		TacticalMarine(TacticalMarine const &other);
-		void operator = (TacticalMarine const &other);
+		TacticalMarine& operator = (TacticalMarine const &other);
 		ISpaceMarine* clone() const;
 		void battleCry() const;
 		void rangedAttack() const;

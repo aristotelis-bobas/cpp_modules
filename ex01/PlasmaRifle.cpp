@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 21:06:06 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/18 22:06:20 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/19 21:18:34 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,12 @@ PlasmaRifle::PlasmaRifle(PlasmaRifle const &other):
 {
 }
 
-void PlasmaRifle::operator = (PlasmaRifle const &other)
+PlasmaRifle& PlasmaRifle::operator = (PlasmaRifle const &other)
 {
     this->setName(other.getName());
     this->setDamage(other.getDamage());
     this->setAPCost(other.getAPCost());
+	return (*this);
 }
 
 void PlasmaRifle::attack() const

@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 21:21:33 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/19 16:02:47 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/19 21:22:28 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,8 @@ int main()
 	std::cout << "Mutant HP = " << c->getHP() << std::endl;
 	me->attack(c);
     std::cout << *me;
+
+	std::cout << "\n\n" << std::endl;
+
+	delete me;
 }

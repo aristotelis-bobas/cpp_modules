@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 21:20:59 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/18 22:05:46 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/19 21:19:10 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,12 @@ PowerFist::PowerFist(PowerFist const &other):
 {
 }
 
-void PowerFist::operator = (PowerFist const &other)
+PowerFist& PowerFist::operator = (PowerFist const &other)
 {
     this->setName(other.getName());
     this->setDamage(other.getDamage());
     this->setAPCost(other.getAPCost());
+	return (*this);
 }
 
 void PowerFist::attack() const

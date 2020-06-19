@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/19 14:29:57 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/19 14:31:54 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/19 21:24:53 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ AssaultTerminator::AssaultTerminator(AssaultTerminator const &other):
 	std::cout << "* teleports from space *" << std::endl;
 }
 
-void AssaultTerminator::operator = (AssaultTerminator const &other)
+AssaultTerminator& AssaultTerminator::operator = (AssaultTerminator const &other)
 {
 	(void)other;
+	return (*this);
 }
 
 ISpaceMarine* AssaultTerminator::clone() const

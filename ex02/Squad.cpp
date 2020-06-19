@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/19 11:50:49 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/19 15:53:21 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/19 22:18:08 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ Squad::Squad(Squad const &other):
 	this->capacity = other.capacity;
 	this->squad = new ISpaceMarine*[this->capacity];
 	for (int i = 0; i < this->size; i++)
-		this->push(other.squad[i]->clone());
+		this->squad[i] = other.getUnit(i)->clone();
 }
 
-void Squad::operator = (Squad const &other)
+Squad& Squad::operator = (Squad const &other)
 {
 	if (this->size > 0)
 	{
@@ -44,7 +44,8 @@ void Squad::operator = (Squad const &other)
 	this->capacity = other.capacity;
 	this->squad = new ISpaceMarine*[this->capacity];
 	for (int i = 0; i < this->size; i++)
-		this->push(other.squad[i]->clone());
+		this->squad[i] = other.getUnit(i)->clone();
+	return (*this);
 }
 
 int Squad::getCount() const
