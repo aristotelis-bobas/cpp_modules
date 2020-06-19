@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 20:11:20 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/18 20:43:02 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/19 11:07:22 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Victim
         void operator = (Victim const &other);
         std::string getName() const;
         virtual void getPolymorphed() const;
-        ~Victim();
+        virtual ~Victim();
 };
 
 std::ostream& operator << (std::ostream &out, Victim const &src);
