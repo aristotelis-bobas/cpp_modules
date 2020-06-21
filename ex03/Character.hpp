@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/19 23:05:42 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/20 00:33:36 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/21 14:52:29 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Character: public ICharacter
 		void unequip(int idx);
 		void use(int idx, ICharacter &target);
 		std::string const& getName() const;
-		~Character();
+		virtual ~Character();
 };
 
 #endif

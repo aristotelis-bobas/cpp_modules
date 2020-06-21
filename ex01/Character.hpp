@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 22:15:45 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/19 21:17:17 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/21 14:51:43 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class Character
         std::string getWeapon() const;
         bool getEquipped() const;
         int getAP() const;
-        ~Character();
+        virtual ~Character();
 };
 
 std::ostream& operator << (std::ostream &out, Character const &src);

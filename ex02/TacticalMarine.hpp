@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/19 14:18:01 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/19 21:26:24 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/21 14:52:21 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class TacticalMarine: public ISpaceMarine
 		void battleCry() const;
 		void rangedAttack() const;
 		void meleeAttack() const;
-		~TacticalMarine();
+		virtual ~TacticalMarine();
 };
 
 #endif

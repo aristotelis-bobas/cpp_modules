@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/19 14:29:22 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/19 21:23:43 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/21 14:52:06 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class AssaultTerminator: public ISpaceMarine
 		void battleCry() const;
 		void rangedAttack() const;
 		void meleeAttack() const;
-		~AssaultTerminator();
+		virtual ~AssaultTerminator();
 };
 
 #endif

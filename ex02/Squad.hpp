@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/19 12:08:17 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/19 21:25:29 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/21 14:53:56 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ class Squad: public ISquad
 		int getCount() const;
 		ISpaceMarine* getUnit(int index) const;
 		int push(ISpaceMarine *marine);
-		~Squad();
-		
+		virtual ~Squad();
 };
 
 #endif

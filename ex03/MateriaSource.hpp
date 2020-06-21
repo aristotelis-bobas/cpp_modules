@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/19 16:45:54 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/19 23:54:21 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/21 14:52:50 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class MateriaSource: public IMateriaSource
 		MateriaSource& operator = (MateriaSource const &other);
 		void learnMateria(AMateria *m);
 		AMateria* createMateria(std::string const &type);
-		~MateriaSource();
+		virtual ~MateriaSource();
 };
 
 #endif

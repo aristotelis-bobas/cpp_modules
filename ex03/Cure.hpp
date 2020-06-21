@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/19 22:57:42 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/19 22:58:03 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/21 14:52:33 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Cure: public AMateria
 		Cure& operator = (Cure const &other);
 		AMateria* clone() const;
 		void use(ICharacter &target);
-		~Cure();
+		virtual ~Cure();
 };
 
 #endif

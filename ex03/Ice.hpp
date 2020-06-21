@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/19 22:37:21 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/19 22:59:51 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/21 14:52:39 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Ice: public AMateria
 		Ice& operator = (Ice const &other);
 		AMateria* clone() const;
 		void use(ICharacter &target);
-		~Ice();
+		virtual ~Ice();
 };
 
 #endif
