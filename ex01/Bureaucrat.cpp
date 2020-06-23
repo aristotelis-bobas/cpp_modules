@@ -6,14 +6,14 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/22 15:05:47 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/22 20:06:25 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/22 21:14:08 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include <string>
-#include <ostream>
 #include <exception>
+#include <iostream>
 
 Bureaucrat::Bureaucrat(std::string const name, int grade):
 	name(name)
@@ -49,6 +49,26 @@ const char* Bureaucrat::GradeTooHighException::what() const throw()
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("Exception: grade below minimum");
+}
+
+void Bureaucrat::signForm(Form &form)
+{
+	if (form.getStatus() == true)
+	{
+		std::cout << "Bureaucrat " << this->getName() << " can not sign form ";
+		std::cout << form.getName() << " because it is already signed" << std::endl;
+	}
+	else if (form.getSignGrade() < this->getGrade())
+	{
+		std::cout << "Bureaucrat " << this->getName() << " can not sign form ";
+		std::cout << form.getName() << " because grade is not high enough" << std::endl;
+	}
+	else
+	{
+		std::cout << "Bureaucrat " << this->getName() << " signed form ";
+		std::cout << form.getName() << std::endl;
+		form.updateStatus();
+	}
 }
 
 int Bureaucrat::getGrade() const

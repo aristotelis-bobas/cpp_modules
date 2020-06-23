@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Bureaucrat.hpp                                     :+:    :+:            */
+/*   Form.hpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/22 15:05:45 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/22 18:29:23 by abobas        ########   odam.nl         */
+/*   Created: 2020/06/22 18:30:10 by abobas        #+#    #+#                 */
+/*   Updated: 2020/06/22 20:27:51 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
+#ifndef FORM_HPP
+#define FORM_HPP
 
 #include <string>
-#include <ostream>
 #include <exception>
+#include <ostream>
 
-class Bureaucrat
+class Bureaucrat;
+
+class Form
 {
 	private:
+		bool status;
 		const std::string name;
-		int grade;
+		const int sign_grade;
+		const int execute_grade;
 	public:
-		Bureaucrat(std::string const name, int grade);
-		Bureaucrat(Bureaucrat const &other);
-		Bureaucrat& operator = (Bureaucrat const &other);
-		int getGrade() const;
-		std::string getName() const;
-		void promoteGrade();
-		void demoteGrade();
+		Form(std::string name, int sign_grade, int execute_grade);
+		Form(Form const &other);
+		Form& operator = (Form const &other);
 		class GradeTooHighException: public std::exception
 		{
 			virtual const char* what() const throw();
@@ -38,9 +38,15 @@ class Bureaucrat
 		{
 			virtual const char* what() const throw();
 		};
-		virtual ~Bureaucrat();
+		bool getStatus() const;
+		void updateStatus();
+		std::string getName() const;
+		int getSignGrade() const;
+		int getExecuteGrade() const;
+		void beSigned(Bureaucrat &bureaucrat);
+		~Form();
 };
 
-std::ostream& operator << (std::ostream &out, Bureaucrat const &src);
+std::ostream& operator << (std::ostream &out, Form const &src);
 
 #endif

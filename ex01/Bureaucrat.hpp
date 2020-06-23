@@ -6,13 +6,14 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/22 15:05:45 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/22 18:29:23 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/22 20:18:35 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
+#include "Form.hpp"
 #include <string>
 #include <ostream>
 #include <exception>
@@ -30,6 +31,7 @@ class Bureaucrat
 		std::string getName() const;
 		void promoteGrade();
 		void demoteGrade();
+		void signForm(Form &form);
 		class GradeTooHighException: public std::exception
 		{
 			virtual const char* what() const throw();
