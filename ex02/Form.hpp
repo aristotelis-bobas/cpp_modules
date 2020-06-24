@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/22 18:30:10 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/23 22:22:45 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/24 14:13:47 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Form
 	public:
 		Form(std::string name, std::string target, int sign_grade, int execute_grade);
 		Form(Form const &other);
-		virtual Form& operator = (Form const &other);
+		Form& operator = (Form const &other);
 		class GradeTooHighException: public std::exception
 		{
 			virtual const char* what() const throw();

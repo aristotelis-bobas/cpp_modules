@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/22 15:05:51 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/23 22:26:21 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/24 14:12:54 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main()
 		try
 		{
 			Bureaucrat joe("Joe", 3);
-			ShrubberyCreationForm a("home)");
+			ShrubberyCreationForm a("home");
 			PresidentialPardonForm b("Donald Trump");
 			RobotomyRequestForm c("alien planet");
 			std::cout << joe << a << b << c;
