@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/22 15:05:47 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/24 15:43:20 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/24 15:49:09 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void Bureaucrat::signForm(Form &form) const
 {
 	if (form.getStatus() == true)
 	{
-		std::cout << "Bureaucrat " << this->getName() << " can not execute form ";
+		std::cout << "Bureaucrat " << this->getName() << " can not sign form ";
 		std::cout << form.getName() << " because it is already signed" << std::endl;
 	}
 	else if (form.getSignGrade() < this->getGrade())
