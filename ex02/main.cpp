@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/22 15:05:51 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/24 14:12:54 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/24 15:43:32 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,21 @@ int main()
 			joe.signForm(c);
 			joe.executeForm(c);
 			
+		}
+		catch(const std::exception &e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+	}
+	std::cout << std::endl;
+	{
+		try
+		{
+			Bureaucrat harry("Harry", 150);
+			PresidentialPardonForm b("Donald Trump");
+			std::cout << harry << b;
+			harry.signForm(b);
+			harry.executeForm(b);
 		}
 		catch(const std::exception &e)
 		{

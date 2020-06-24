@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/22 15:05:47 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/23 22:16:25 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/24 15:43:20 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void Bureaucrat::signForm(Form &form) const
 {
 	if (form.getStatus() == true)
 	{
-		std::cout << "Bureaucrat " << this->getName() << " can not sign form ";
+		std::cout << "Bureaucrat " << this->getName() << " can not execute form ";
 		std::cout << form.getName() << " because it is already signed" << std::endl;
 	}
 	else if (form.getSignGrade() < this->getGrade())
@@ -73,8 +73,21 @@ void Bureaucrat::signForm(Form &form) const
 
 void Bureaucrat::executeForm(Form const &form)
 {
+	if (form.getStatus() == false)
+	{
+		std::cout << "Bureaucrat " << this->getName() << " can not execute form ";
+		std::cout << form.getName() << " because it is not signed yet" << std::endl;
+	}
+	else if (form.getExecuteGrade() < this->getGrade())
+	{
+		std::cout << "Bureaucrat " << this->getName() << " can not execute form ";
+		std::cout << form.getName() << " because grade is not high enough" << std::endl;
+	}
+	else
+	{
+		std::cout << "Bureaucrat " << this->getName() << " executes form " << form.getName() << std::endl;
+	}
 	form.execute(*this);
-	std::cout << "Bureaucrat " << this->getName() << " executed form " << form.getName() << std::endl;
 }
 
 int Bureaucrat::getGrade() const
