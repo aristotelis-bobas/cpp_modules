@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/22 18:30:10 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/24 14:13:47 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/26 14:20:39 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ class Form
 		{
 			virtual const char* what() const throw();
 		};
-		class ExecuteGradeTooLow: public std::exception
+		class FormAlreadySigned: public std::exception
 		{
 			virtual const char* what() const throw();
 		};

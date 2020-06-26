@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/22 18:30:07 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/23 22:22:18 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/26 14:23:20 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,22 +44,22 @@ Form& Form::operator = (Form const &other)
 
 const char* Form::GradeTooHighException::what() const throw()
 {
-	return ("Exception: grade above maximum");
+	return ("grade above maximum");
 }
 
 const char* Form::GradeTooLowException::what() const throw()
 {
-	return ("Exception: grade below minimum");
+	return ("grade below minimum");
+}
+
+const char* Form::FormAlreadySigned::what() const throw()
+{
+	return ("form is already signed");
 }
 
 const char* Form::FormNotSigned::what() const throw()
 {
-	return ("Exception: form is not signed");
-}
-
-const char* Form::ExecuteGradeTooLow::what() const throw()
-{
-	return ("Exception: executing bureaucrat's grade is too low");
+	return ("form is not signed");
 }
 
 void Form::setStatus(bool value)
@@ -99,10 +99,11 @@ int Form::getExecuteGrade() const
 
 void Form::beSigned(Bureaucrat const &bureaucrat)
 {
-	if (this->sign_grade >= bureaucrat.getGrade())
-		bureaucrat.signForm(*this);
-	else
+	if (this->getSignGrade() < bureaucrat.getGrade())
 		throw Form::GradeTooLowException();
+	if (this->getStatus() == true)
+		throw Form::FormAlreadySigned();
+	this->setStatus(true);
 }
 
 void Form::execute(Bureaucrat const &executor) const
@@ -110,7 +111,7 @@ void Form::execute(Bureaucrat const &executor) const
 	if (this->getStatus() == false)
 		throw Form::FormNotSigned();
 	if (executor.getGrade() > this->getExecuteGrade())
-		throw Form::ExecuteGradeTooLow();	
+		throw Form::GradeTooLowException();	
 }
 
 std::ostream& operator << (std::ostream &out, Form const &src)

@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/22 15:05:47 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/24 15:49:09 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/26 14:24:03 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,41 +53,32 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 
 void Bureaucrat::signForm(Form &form) const
 {
-	if (form.getStatus() == true)
+	try
 	{
-		std::cout << "Bureaucrat " << this->getName() << " can not sign form ";
-		std::cout << form.getName() << " because it is already signed" << std::endl;
-	}
-	else if (form.getSignGrade() < this->getGrade())
-	{
-		std::cout << "Bureaucrat " << this->getName() << " can not sign form ";
-		std::cout << form.getName() << " because grade is not high enough" << std::endl;
-	}
-	else
-	{
+		form.beSigned(*this);
 		std::cout << "Bureaucrat " << this->getName() << " signed form ";
 		std::cout << form.getName() << std::endl;
-		form.setStatus(true);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << "Bureaucrat " << this->getName() << " can not sign form ";
+		std::cout << form.getName() << " because " << e.what() << std::endl;
 	}
 }
 
 void Bureaucrat::executeForm(Form const &form)
 {
-	if (form.getStatus() == false)
+	try
+	{
+		form.execute(*this);
+		std::cout << "Bureaucrat " << this->getName() << " executed form ";
+		std::cout << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
 	{
 		std::cout << "Bureaucrat " << this->getName() << " can not execute form ";
-		std::cout << form.getName() << " because it is not signed yet" << std::endl;
+		std::cout << form.getName() << " because " << e.what() << std::endl;
 	}
-	else if (form.getExecuteGrade() < this->getGrade())
-	{
-		std::cout << "Bureaucrat " << this->getName() << " can not execute form ";
-		std::cout << form.getName() << " because grade is not high enough" << std::endl;
-	}
-	else
-	{
-		std::cout << "Bureaucrat " << this->getName() << " executes form " << form.getName() << std::endl;
-	}
-	form.execute(*this);
 }
 
 int Bureaucrat::getGrade() const
