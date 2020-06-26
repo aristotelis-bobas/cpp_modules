@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/22 18:30:10 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/23 16:45:34 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/26 14:11:30 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,16 @@ class Form
 		{
 			virtual const char* what() const throw();
 		};
+		class FormAlreadySigned: public std::exception
+		{
+			virtual const char* what() const throw();
+		};
 		bool getStatus() const;
 		void updateStatus();
 		std::string getName() const;
 		int getSignGrade() const;
 		int getExecuteGrade() const;
-		void beSigned(Bureaucrat &bureaucrat);
+		void beSigned(Bureaucrat const &bureaucrat);
 		virtual ~Form();
 };
 

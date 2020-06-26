@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/22 15:05:51 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/22 21:14:48 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/26 14:16:56 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,47 +19,37 @@ int main()
 	{
 		try
 		{
-			Bureaucrat steve("Steve", 30);
-			std::cout << steve;
-			for (int i = 0; i < 100; i++)
-			{
-				steve.promoteGrade();
-				std::cout << steve;
-			}
+			Form("Blabla", -100, 20);
 		}
 		catch(const std::exception &e)
 		{
 			std::cerr << e.what() << '\n';
 		}
 	}
-	std::cout << std::endl;
 	{
 		try
 		{
-			Bureaucrat harry("Harry", 100);
-			std::cout << harry;
-			for (int i = 0; i < 100; i++)
-			{
-				harry.demoteGrade();
-				std::cout << harry;
-			}
+			Form("Blabla", 20, -100);
 		}
 		catch(const std::exception &e)
 		{
 			std::cerr << e.what() << '\n';
 		}
 	}
-	std::cout << std::endl;
 	{
 		try
 		{
-			Form *pokemon;
-			for (int i = 10; i >= 0; i--)
-			{
-				pokemon = new Form("pokemon card collection", (i * 3), i);
-				std::cout << *pokemon;
-				delete pokemon;
-			}
+			Form("Blabla", 1000, 20);
+		}
+		catch(const std::exception &e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+	}
+	{
+		try
+		{
+			Form("Blabla", 20, -1000);
 		}
 		catch(const std::exception &e)
 		{
@@ -81,6 +71,7 @@ int main()
 			}
 			std::cout << joe << taxes;
 			taxes.beSigned(joe);
+			std::cout << joe << taxes;
 		}
 		catch(const std::exception &e)
 		{

@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/22 15:05:51 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/22 20:06:03 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/26 13:37:49 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,26 @@ int main()
 				harry.demoteGrade();
 				std::cout << harry;
 			}
+		}
+		catch(const std::exception &e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+	}
+	{
+		try
+		{
+			Bureaucrat harry("Blabla", 1200000);
+		}
+		catch(const std::exception &e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+	}
+	{
+		try
+		{
+			Bureaucrat harry("Noob Bureaucrat", -1200000);
 		}
 		catch(const std::exception &e)
 		{

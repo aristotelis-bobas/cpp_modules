@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/22 15:05:47 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/23 17:28:32 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/26 14:14:39 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,21 +53,16 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 
 void Bureaucrat::signForm(Form &form) const
 {
-	if (form.getStatus() == true)
+	try
 	{
-		std::cout << "Bureaucrat " << this->getName() << " can not sign form ";
-		std::cout << form.getName() << " because it is already signed" << std::endl;
-	}
-	else if (form.getSignGrade() < this->getGrade())
-	{
-		std::cout << "Bureaucrat " << this->getName() << " can not sign form ";
-		std::cout << form.getName() << " because grade is not high enough" << std::endl;
-	}
-	else
-	{
+		form.beSigned(*this);
 		std::cout << "Bureaucrat " << this->getName() << " signed form ";
 		std::cout << form.getName() << std::endl;
-		form.updateStatus();
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << "Bureaucrat " << this->getName() << " can not sign form ";
+		std::cout << form.getName() << " because " << e.what() << std::endl;
 	}
 }
 

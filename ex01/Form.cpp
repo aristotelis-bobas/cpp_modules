@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/22 18:30:07 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/22 21:13:49 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/26 14:13:46 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,17 @@ Form& Form::operator = (Form const &other)
 
 const char* Form::GradeTooHighException::what() const throw()
 {
-	return ("Exception: grade above maximum");
+	return ("grade above maximum");
 }
 
 const char* Form::GradeTooLowException::what() const throw()
 {
-	return ("Exception: grade below minimum");
+	return ("grade below minimum");
+}
+
+const char* Form::FormAlreadySigned::what() const throw()
+{
+	return ("form is already signed");
 }
 
 void Form::updateStatus()
@@ -77,12 +82,13 @@ int Form::getExecuteGrade() const
 	return (this->execute_grade);
 }
 
-void Form::beSigned(Bureaucrat &bureaucrat)
+void Form::beSigned(Bureaucrat const &bureaucrat)
 {
-	if (this->sign_grade >= bureaucrat.getGrade())
-		bureaucrat.signForm(*this);
-	else
+	if (this->getSignGrade() < bureaucrat.getGrade())
 		throw Form::GradeTooLowException();
+	if (this->getStatus() == true)
+		throw Form::FormAlreadySigned();
+	this->updateStatus();
 }
 
 std::ostream& operator << (std::ostream &out, Form const &src)
