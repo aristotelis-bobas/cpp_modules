@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/23 16:36:54 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/24 22:10:52 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/29 13:23:06 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,7 @@ Form* RobotomyRequestForm::clone() const
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
-   	if (this->getStatus() == false)
-		throw Form::FormNotSigned();
-	if (executor.getGrade() > this->getExecuteGrade())
-		throw Form::ExecuteGradeTooLow();
+    this->Form::execute(executor);
     std::cout << "Drill goes *BRRRRRRRRRRRRRR*" << std::endl;
     if (rand() % 2 == 1)
         std::cout << "Robotomization of " << this->getTarget() << " was succesful" << std::endl;

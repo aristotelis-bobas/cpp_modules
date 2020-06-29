@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/23 16:36:59 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/24 22:11:12 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/29 13:23:33 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,7 @@ Form* ShrubberyCreationForm::clone() const
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-    if (this->getStatus() == false)
-		throw Form::FormNotSigned();
-	if (executor.getGrade() > this->getExecuteGrade())
-		throw Form::ExecuteGradeTooLow();
+    this->Form::execute(executor);
     std::ofstream file;
     file.open(this->getTarget().c_str(), std::ios::out | std::ios::trunc);
     file <<  

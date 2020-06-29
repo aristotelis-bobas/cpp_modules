@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/23 16:36:52 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/24 22:09:56 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/29 13:22:54 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,7 @@ Form* PresidentialPardonForm::clone() const
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
-    if (this->getStatus() == false)
-		throw Form::FormNotSigned();
-	if (executor.getGrade() > this->getExecuteGrade())
-		throw Form::ExecuteGradeTooLow();
+    this->Form::execute(executor);
     std::cout << this->getTarget() << " has been pardoned by Zafod Beeblebrox" << std::endl;
 }
 
