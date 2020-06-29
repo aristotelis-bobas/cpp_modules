@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/22 18:30:07 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/26 14:23:20 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/29 13:13:33 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ void Form::execute(Bureaucrat const &executor) const
 {
 	if (this->getStatus() == false)
 		throw Form::FormNotSigned();
-	if (executor.getGrade() > this->getExecuteGrade())
+	if (this->getExecuteGrade() < executor.getGrade())
 		throw Form::GradeTooLowException();	
 }
 
