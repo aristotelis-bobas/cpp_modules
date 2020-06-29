@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/23 16:36:57 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/23 22:21:35 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/29 13:31:49 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class RobotomyRequestForm: public Form
         RobotomyRequestForm(RobotomyRequestForm const &other);
         RobotomyRequestForm& operator = (RobotomyRequestForm const &other);
         void execute(Bureaucrat const &executor) const;
-        ~RobotomyRequestForm();
+        virtual ~RobotomyRequestForm();
 };
 
 #endif

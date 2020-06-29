@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/23 16:37:01 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/24 22:10:25 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/29 13:31:29 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class ShrubberyCreationForm: public Form
         ShrubberyCreationForm& operator = (ShrubberyCreationForm const &other);
         Form* clone() const;
         void execute(Bureaucrat const &executor) const;
-        ~ShrubberyCreationForm();
+        virtual ~ShrubberyCreationForm();
 };
 
 #endif
