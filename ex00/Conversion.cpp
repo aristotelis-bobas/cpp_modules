@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/29 14:08:00 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/29 21:05:44 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/29 21:15:26 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,24 @@ Conversion::Conversion(char const *arg)
     this->overflow = false;
     if (this->parse())
         return ;
-    this->display();    
+    this->display();
+}
+
+Conversion::Conversion(Conversion const &other)
+{
+    this->arg = other.arg;
+    this->decimals = other.decimals;
+    this->special = other.special;
+    this->overflow = other.overflow;
+}
+
+Conversion& Conversion::operator = (Conversion const &other)
+{
+    this->arg = other.arg;
+    this->decimals = other.decimals;
+    this->special = other.special;
+    this->overflow = other.overflow;
+    return (*this);
 }
 
 int Conversion::parse()
@@ -235,4 +252,8 @@ void Conversion::display()
                 std::cout << std::endl;
         }
     }
+}
+
+Conversion::~Conversion()
+{
 }
