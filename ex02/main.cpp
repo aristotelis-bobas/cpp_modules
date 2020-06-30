@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/30 13:28:02 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/30 14:01:35 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/30 14:29:59 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ int main()
 	for (int i = 0; i < 10; i++)
 	{	Base *ptr = generate();
 		identify_from_pointer(ptr);
+		identify_from_reference(*ptr);
 		delete ptr;
 		std::cout << std::endl;
 	}
