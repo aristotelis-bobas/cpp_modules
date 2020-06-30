@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/30 16:20:45 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/30 17:41:06 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/30 18:43:57 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,10 @@ int main()
 		iter(array, 10, &print);
 		std::cout << std::endl;
 	}
+	{
 		double array[8] = {1.99, 64.646, 3.837, 98.73, 8543.332, 543.343, 742.235, 225.234};
 		iter(array, 8, &print);
 		std::cout << std::endl;
+	}
 }
 

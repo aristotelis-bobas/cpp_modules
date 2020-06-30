@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/30 17:45:33 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/30 18:27:10 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/30 18:45:35 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,14 @@ Array<T>& Array<T>::operator=(Array<T> const &other)
 
 template <typename T>
 T& Array<T>::operator[](size_t index)
+{
+	if (index < 0 || index >= this->array_size)
+		throw Array<T>::OutOfBounds();
+	return (this->array[index]);
+}
+
+template <typename T>
+const T& Array<T>::operator[](size_t index) const
 {
 	if (index < 0 || index >= this->array_size)
 		throw Array<T>::OutOfBounds();

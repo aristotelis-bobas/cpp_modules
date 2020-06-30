@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/30 17:42:30 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/30 18:21:20 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/30 18:45:24 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class Array
 		Array(Array<T> const &other);
 		Array<T>& operator=(Array<T> const &other);
 		T& operator[](size_t index);
+		const T& operator[](size_t index) const;
 		class OutOfBounds: public std::exception
 		{
 			virtual const char* what() const throw();
