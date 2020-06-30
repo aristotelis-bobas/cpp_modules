@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/29 21:21:20 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/29 22:29:09 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/30 14:41:33 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void* serialize(void)
     char* memory = new char[20];
     for (int i = 0; i < 8; i++)
         memory[i] = randomAlphaNum();
-    *reinterpret_cast<int*>(memory + 8) = rand() % 777;
+    *reinterpret_cast<int*>(memory + 8) = rand() % 777;     // reinterpreting char bytes as int bytes
     for (int i = 12; i < 20; i++)
         memory[i] = randomAlphaNum();
     return (static_cast<void*>(memory));
@@ -44,7 +44,7 @@ Data* deserialize(void *raw)
 {
     Data *ret = new Data;
     ret->s1 = std::string(static_cast<char*>(raw), 8);
-    ret->n = *reinterpret_cast<int*>(static_cast<char*>(raw) + 8);    // static_cast to char pointer first otherwise arithmetic error on void pointer
+    ret->n = *reinterpret_cast<int*>(static_cast<char*>(raw) + 8);    // static_cast to char pointer first otherwise arithmetic error while reinterpreting void bytes
     ret->s2 = std::string(static_cast<char*>(raw) + 12, 8);
     return(ret);
 }

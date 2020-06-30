@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/29 14:08:00 by abobas        #+#    #+#                 */
-/*   Updated: 2020/06/29 21:15:26 by abobas        ########   odam.nl         */
+/*   Updated: 2020/06/30 15:06:00 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <cctype>
 #include <cstdlib>
 #include <cmath>
+#include <iomanip>
 
 Conversion::Conversion(char const *arg)
 {
@@ -22,9 +23,8 @@ Conversion::Conversion(char const *arg)
     this->decimals = false;
     this->special = false;
     this->overflow = false;
-    if (this->parse())
-        return ;
-    this->display();
+    if (!this->parse())
+    	this->display();
 }
 
 Conversion::Conversion(Conversion const &other)
@@ -33,6 +33,8 @@ Conversion::Conversion(Conversion const &other)
     this->decimals = other.decimals;
     this->special = other.special;
     this->overflow = other.overflow;
+	if (!this->parse())
+    	this->display();
 }
 
 Conversion& Conversion::operator = (Conversion const &other)
@@ -41,6 +43,8 @@ Conversion& Conversion::operator = (Conversion const &other)
     this->decimals = other.decimals;
     this->special = other.special;
     this->overflow = other.overflow;
+	if (!this->parse())
+    	this->display();
     return (*this);
 }
 
@@ -78,12 +82,12 @@ int Conversion::parse()
         }
         if (this->arg[this->arg.length() - 1] == 'f')
             this->type = "float";
-        if (this->arg == "-inf" || this->arg == "+inf" || this->arg == "nan")
+        if (this->arg == "-inf" || this->arg == "+inf" || this->arg == "nan" || this->arg == "inf")
         {
             this->special = true;
             this->type = "double";
         }
-        if (this->arg == "-inff" || this->arg == "+inff" || this->arg == "nanf")
+        if (this->arg == "-inff" || this->arg == "+inff" || this->arg == "nanf" || this->arg == "inff")
         {
             this->special = true;
             this->type = "float";
@@ -126,7 +130,7 @@ void Conversion::display()
         this->float_value = static_cast<float>(this->char_value);
         this->double_value = static_cast<double>(this->char_value);
         std::cout << "char: ";
-        if (this->special || this->overflow || this->char_value < 0 || this->char_value > 127)
+        if (this->special || this->overflow || this->int_value < 0 || this->int_value > 127)
             std::cout << "impossible\n";
         else if (this->char_value < 32 || this->char_value > 126)
             std::cout << "Non displayable\n";
@@ -141,8 +145,8 @@ void Conversion::display()
         {
             std::cout << this->int_value << "\n";
         }
-        std::cout << "float: " << this->float_value << ".0f\n";
-        std::cout << "double: " << this->double_value << ".0" << std::endl;
+        std::cout << "float: " << std::setprecision(1) << std::fixed << this->float_value << "f\n";
+        std::cout << "double: " << std::setprecision(1) << std::fixed << this->double_value << std::endl;
     }
     else if (this->type == "int")
     {
@@ -165,8 +169,8 @@ void Conversion::display()
         {
             std::cout << this->int_value << "\n";
         }
-        std::cout << "float: " << this->float_value << ".0f\n";
-        std::cout << "double: " << this->double_value << ".0" << std::endl;
+        std::cout << "float: " << std::setprecision(1) << std::fixed << this->float_value << "f\n";
+        std::cout << "double: " << std::setprecision(1) << std::fixed << this->double_value << std::endl;
     }
     else if (this->type == "float")
     {
@@ -174,7 +178,7 @@ void Conversion::display()
         this->int_value = static_cast<int>(this->float_value);
         this->double_value = static_cast<double>(this->float_value);
         std::cout << "char: ";
-        if (this->special || this->overflow || this->char_value < 0 || this->char_value > 127)
+        if (this->special || this->overflow || this->int_value < 0 || this->int_value > 127)
             std::cout << "impossible\n";
         else if (this->char_value < 32 || this->char_value > 126)
             std::cout << "Non displayable\n";
@@ -189,26 +193,8 @@ void Conversion::display()
         {
             std::cout << this->int_value << "\n";
         }
-        std::cout << "float: " << this->float_value;
-        if (this->special == true)
-            std::cout << "f" << std::endl;
-        else
-        {
-            if (this->decimals == false)
-                std::cout << ".0f\n";
-            else
-                std::cout << "f\n";
-        }
-        std::cout << "double: " << this->double_value;
-        if (this->special == true)
-            std::cout << std::endl;
-        else
-        {
-            if (this->decimals == false)
-                std::cout << ".0" << std::endl;
-            else
-                std::cout << std::endl;
-        }
+        std::cout << "float: " << std::setprecision(1) << std::fixed << this->float_value << "f\n";
+        std::cout << "double: " << std::setprecision(1) << std::fixed << this->double_value << std::endl;
     }
     else if (this->type == "double")
     {
@@ -216,7 +202,7 @@ void Conversion::display()
         this->int_value = static_cast<int>(this->double_value);
         this->float_value = static_cast<float>(this->double_value);
         std::cout << "char: ";
-        if (this->special || this->overflow || this->char_value < 0 || this->char_value > 127)
+        if (this->special || this->overflow || this->int_value < 0 || this->int_value > 127)
             std::cout << "impossible\n";
         else if (this->char_value < 32 || this->char_value > 126)
             std::cout << "Non displayable\n";
@@ -231,26 +217,8 @@ void Conversion::display()
         {
             std::cout << this->int_value << "\n";
         }
-        std::cout << "float: " << this->float_value;
-        if (this->special == true)
-            std::cout << "f" << std::endl;
-        else
-        {
-            if (this->decimals == false)
-                std::cout << ".0f\n";
-            else
-                std::cout << "f\n";
-        }
-        std::cout << "double: " << this->double_value;
-        if (this->special == true)
-            std::cout << std::endl;
-        else
-        {
-            if (this->decimals == false)
-                std::cout << ".0" << std::endl;
-            else
-                std::cout << std::endl;
-        }
+        std::cout << "float: " << std::setprecision(1) << std::fixed << this->float_value << "f\n";
+        std::cout << "double: " << std::setprecision(1) << std::fixed << this->double_value << std::endl;
     }
 }
 

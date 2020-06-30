@@ -6,7 +6,7 @@
 #    By: abobas <abobas@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/06/22 15:06:35 by abobas        #+#    #+#                  #
-#    Updated: 2020/06/29 15:48:04 by abobas        ########   odam.nl          #
+#    Updated: 2020/06/30 14:45:15 by abobas        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRC = 		main.cpp \
 
 INCLUDE =	Conversion.hpp
 			
-NAME = 		conversion
+NAME = 		convert
 
 FLAGS =		-Wall -Werror -Wextra -std=c++98 -pedantic
 
