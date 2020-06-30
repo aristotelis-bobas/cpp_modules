@@ -6,15 +6,15 @@
 #    By: abobas <abobas@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/06/22 15:06:35 by abobas        #+#    #+#                  #
-#    Updated: 2020/06/30 16:20:20 by abobas        ########   odam.nl          #
+#    Updated: 2020/06/30 17:41:13 by abobas        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = 		whatever.cpp
+SRC = 		iter.cpp
 
 INCLUDE =	
 			
-NAME = 		whatever
+NAME = 		iter
 
 FLAGS =		-Wall -Werror -Wextra -std=c++98 -pedantic
 
