@@ -6,13 +6,13 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/01 21:05:15 by abobas        #+#    #+#                 */
-/*   Updated: 2020/07/03 14:37:59 by abobas        ########   odam.nl         */
+/*   Updated: 2020/07/03 15:47:17 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "span.hpp"
 #include <algorithm>
-#include <iostream>
+#include <iterator>
 
 Span::Span(unsigned int N)
 {
@@ -56,6 +56,21 @@ void Span::addNumber(int add)
         throw Span::CapacityReached();
 }
 
+void Span::addNumber(std::vector<int> &vector)
+{
+    for (std::vector<int>::iterator it = vector.begin(); it != vector.end(); it++)
+        this->addNumber(*it);
+}
+
+void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+    while (begin != end)
+    {
+        this->addNumber(*begin);
+        begin++;
+    }
+}
+
 uint32_t Span::shortestSpan()
 {
     if (this->size < 2)
@@ -84,9 +99,9 @@ uint32_t Span::longestSpan()
         throw Span::NoSpanToFind();
     int max = *std::max_element(this->content.begin(), this->content.end());
     int min = *std::min_element(this->content.begin(), this->content.end());
-    if (max - min < 1)
+    if (std::abs(max - min) < 1)
         throw Span::NoSpanToFind();
-    return (max - min);
+    return (std::abs(max - min));
 }
 
 Span::~Span()

@@ -6,12 +6,13 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/01 12:41:47 by abobas        #+#    #+#                 */
-/*   Updated: 2020/07/03 14:37:19 by abobas        ########   odam.nl         */
+/*   Updated: 2020/07/03 15:46:01 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "span.hpp"
 #include <iostream>
+#include <vector>
 
 int main()
 {
@@ -109,7 +110,7 @@ int main()
             Span test(10);
             
             for (int i = 0; i < 10; i++)
-                test.addNumber((i * 112));
+                test.addNumber((i * -112));
             
             std::cout << "Shortest span: " << test.shortestSpan() << std::endl;
         }
@@ -118,5 +119,56 @@ int main()
             std::cerr << e.what() << '\n';
         }
 
+    }
+    {
+        try
+        {
+            Span test(10000);
+            std::vector<int> vector;
+            
+            for (int i = 0; i < 10000; i++)
+                vector.push_back(i);
+            test.addNumber(vector);
+            
+            std::cout << "Shortest span: " << test.shortestSpan() << std::endl;
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
+    }
+    {
+        try
+        {
+            Span test(10000);
+            std::vector<int> vector;
+            
+            for (int i = 0; i < 10000; i++)
+                vector.push_back(i);
+            test.addNumber(vector.begin(), vector.end());
+            
+            std::cout << "Shortest span: " << test.shortestSpan() << std::endl;
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
+    }
+    {
+        try
+        {
+            Span test(100);
+            std::vector<int> vector;
+            
+            for (int i = 0; i < 10000; i++)
+                vector.push_back(i);
+            test.addNumber(vector.begin(), vector.end());
+            
+            std::cout << "Shortest span: " << test.shortestSpan() << std::endl;
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
     }
 }
