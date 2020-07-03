@@ -6,12 +6,13 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/01 21:05:15 by abobas        #+#    #+#                 */
-/*   Updated: 2020/07/01 22:37:29 by abobas        ########   odam.nl         */
+/*   Updated: 2020/07/03 14:37:59 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "span.hpp"
 #include <algorithm>
+#include <iostream>
 
 Span::Span(unsigned int N)
 {
@@ -44,11 +45,6 @@ const char* Span::NoSpanToFind::what() const throw()
     return ("No span to find");
 }
 
-std::vector<int>::iterator Span::getIterator()
-{
-    return (this->content.begin());
-}
-
 void Span::addNumber(int add)
 {
     if (this->size < this->capacity)
@@ -60,16 +56,29 @@ void Span::addNumber(int add)
         throw Span::CapacityReached();
 }
 
-/*
-int Span::shortestSpan() const
+uint32_t Span::shortestSpan()
 {
     if (this->size < 2)
         throw Span::NoSpanToFind();
-    
+    uint32_t shortest_span = UINT32_MAX;
+    bool found = false;
+    for (std::vector<int>::iterator it_i = this->content.begin(); it_i != this->content.end(); it_i++)
+    {
+        for (std::vector<int>::iterator it_j = it_i + 1; it_j != this->content.end(); it_j++)
+        {
+            if (static_cast<uint32_t>(std::abs(*it_i - *it_j)) < shortest_span)
+            {
+                shortest_span = static_cast<uint32_t>(std::abs(*it_i - *it_j));
+                found = true;
+            }
+        }
+    }
+    if (found == false || shortest_span == 0)
+        throw Span::NoSpanToFind();
+    return (shortest_span);
 }
- */
 
-int Span::longestSpan() const
+uint32_t Span::longestSpan()
 {
     if (this->size < 2)
         throw Span::NoSpanToFind();

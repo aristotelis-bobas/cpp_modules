@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/01 20:39:16 by abobas        #+#    #+#                 */
-/*   Updated: 2020/07/01 22:31:05 by abobas        ########   odam.nl         */
+/*   Updated: 2020/07/03 14:37:50 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,8 @@ class Span
         Span(Span const &other);
         Span& operator=(Span const &other);
         void addNumber(int add);
-        //int shortestSpan() const;
-        int longestSpan() const;
-        std::vector<int>::iterator getIterator();
+        uint32_t shortestSpan();
+        uint32_t longestSpan();
         class CapacityReached: public std::exception
         {
             virtual const char* what() const throw();

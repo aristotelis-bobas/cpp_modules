@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/01 12:41:47 by abobas        #+#    #+#                 */
-/*   Updated: 2020/07/01 22:39:17 by abobas        ########   odam.nl         */
+/*   Updated: 2020/07/03 14:37:19 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,6 @@ int main()
             
             for (int i = 0; i < 30; i++)
                 test.addNumber(i);
-            std::vector<int>::iterator it = test.getIterator();
-            for (int i = 0; i < 30; i++)
-            {
-                std::cout << *it << std::endl;
-                it++;
-            }
             std::cout << "Longest span: " << test.longestSpan() << std::endl;
         }
         catch(const std::exception& e)
@@ -78,5 +72,51 @@ int main()
         {
             std::cerr << e.what() << '\n';
         }
+    }
+    {
+        try
+        {
+            Span test(1000);
+            
+            test.addNumber(-10);
+            test.addNumber(-555);
+            
+            std::cout << "Longest span: " << test.longestSpan() << std::endl;
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
+    }
+    {
+        try
+        {
+            Span test(10);
+            
+            for (int i = 0; i < 10; i++)
+                test.addNumber((-i * 10));
+            
+            std::cout << "Shortest span: " << test.shortestSpan() << std::endl;
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
+    }
+    {
+        try
+        {
+            Span test(10);
+            
+            for (int i = 0; i < 10; i++)
+                test.addNumber((i * 112));
+            
+            std::cout << "Shortest span: " << test.shortestSpan() << std::endl;
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
+
     }
 }
