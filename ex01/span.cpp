@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/01 21:05:15 by abobas        #+#    #+#                 */
-/*   Updated: 2020/07/03 15:47:17 by abobas        ########   odam.nl         */
+/*   Updated: 2020/07/03 17:13:56 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,17 @@
 Span::Span(unsigned int N)
 {
     this->capacity = N;
-    this->size = 0;
 }
 
 Span::Span(Span const &other)
 {
     this->capacity = other.capacity;
-    this->size = other.size;
     this->content = other.content;
 }
 
 Span& Span::operator=(Span const &other)
 {
     this->capacity = other.capacity;
-    this->size = other.size;
     this->content = other.content;
     return (*this);
 }
@@ -47,33 +44,15 @@ const char* Span::NoSpanToFind::what() const throw()
 
 void Span::addNumber(int add)
 {
-    if (this->size < this->capacity)
-    {
+    if (this->content.size() < this->capacity)
         this->content.push_back(add);
-        this->size++;
-    }
     else
         throw Span::CapacityReached();
 }
 
-void Span::addNumber(std::vector<int> &vector)
-{
-    for (std::vector<int>::iterator it = vector.begin(); it != vector.end(); it++)
-        this->addNumber(*it);
-}
-
-void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
-{
-    while (begin != end)
-    {
-        this->addNumber(*begin);
-        begin++;
-    }
-}
-
 uint32_t Span::shortestSpan()
 {
-    if (this->size < 2)
+    if (this->content.size() < 2)
         throw Span::NoSpanToFind();
     uint32_t shortest_span = UINT32_MAX;
     bool found = false;
@@ -95,7 +74,7 @@ uint32_t Span::shortestSpan()
 
 uint32_t Span::longestSpan()
 {
-    if (this->size < 2)
+    if (this->content.size() < 2)
         throw Span::NoSpanToFind();
     int max = *std::max_element(this->content.begin(), this->content.end());
     int min = *std::min_element(this->content.begin(), this->content.end());

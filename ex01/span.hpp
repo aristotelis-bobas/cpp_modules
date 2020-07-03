@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/01 20:39:16 by abobas        #+#    #+#                 */
-/*   Updated: 2020/07/03 15:45:25 by abobas        ########   odam.nl         */
+/*   Updated: 2020/07/03 17:15:05 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,34 @@
 #include <vector>
 #include <exception>
 #include <cstddef>
+#include <list>
 
 class Span
 {
     private:
         std::vector<int> content;
-        unsigned int capacity;
-        unsigned int size;
+        uint32_t capacity;
     public:
         Span(unsigned int N);
         Span(Span const &other);
         Span& operator=(Span const &other);
         void addNumber(int add);
-        void addNumber(std::vector<int> &vector);
-        void addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end);
         uint32_t shortestSpan();
         uint32_t longestSpan();
+        template <class container>
+        void addNumber(container new_content)
+        {
+            if (std::distance(new_content.begin(), new_content.end()) > static_cast<long>(this->capacity - this->content.size()))
+                throw Span::CapacityReached();
+            this->content.insert(this->content.end(), new_content.begin(), new_content.end());
+        }
+        template <typename It>
+        void addNumber(It begin, It end)
+        {
+            if (std::distance(begin, end) > static_cast<long>(this->capacity - this->content.size()))
+                throw Span::CapacityReached();
+            this->content.insert(this->content.end(), begin, end);
+        }
         class CapacityReached: public std::exception
         {
             virtual const char* what() const throw();
