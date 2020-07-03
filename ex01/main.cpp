@@ -6,7 +6,7 @@
 /*   By: abobas <abobas@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/01 12:41:47 by abobas        #+#    #+#                 */
-/*   Updated: 2020/07/03 17:16:33 by abobas        ########   odam.nl         */
+/*   Updated: 2020/07/03 19:22:36 by abobas        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,6 @@ int main()
         {
             std::cerr << e.what() << '\n';
         }
-
     }
     {
         try
