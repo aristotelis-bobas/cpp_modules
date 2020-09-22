@@ -4,7 +4,7 @@
 
 This is a project for Codam (42 Network). <br>
 
-The 9 modules formed an introduction to programming in C++.
+The 9 modules formed an introduction to programming in C++. <br>
 The following topics were handled in the modules:
 - Module 00: namespace, class, member functions, stdio streams, initialization lists, static, const
 - Module 01: memory allocation, references, pointers to members, file streams
