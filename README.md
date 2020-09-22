@@ -8,7 +8,7 @@ The 9 modules formed an introduction to programming in C++.
 The following topics were handled in the modules:
 - Module 00: namespace, class, member functions, stdio streams, initialization lists, static, const
 - Module 01: memory allocation, references, pointers to members, file streams
-- Module 02: ad-hoc polymorphism, operators overload, canonical class
+- Module 02: ad-hoc polymorphism, overloading operators, canonical class
 - Module 03: inheritance
 - Module 04: subtype polymorphism, abstract classes, interfaces
 - Module 05: exceptions
