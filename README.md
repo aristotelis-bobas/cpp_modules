@@ -1,7 +1,5 @@
 # CPP_Modules
 
-## Project
-
 This is a project for Codam (42 Network). <br>
 
 The 9 modules formed an introduction to programming in C++. <br>
@@ -15,5 +13,3 @@ The following topics were handled in the modules:
 - Module 06: C++ casts
 - Module 07: templates
 - Module 08: STL
-
-I finished the final module on 4/7/2020 with a grade of 100%.
