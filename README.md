@@ -12,4 +12,4 @@ The following topics were handled in the modules:
 - Module 05: exceptions
 - Module 06: C++ casts
 - Module 07: templates
-- Module 08: STL
+- Module 08: Standard Template Library
